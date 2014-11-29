@@ -4,5 +4,10 @@
     <string name="app_name">FindTheWay</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="life">  X 7</string>
+    <string name="level_g">Level Gada</string>
+    <string name="level_f">Level Farouk</string>
+    <string name="exit">exit</string>
+        
 
 </resources>
