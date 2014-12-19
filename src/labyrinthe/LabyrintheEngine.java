@@ -26,7 +26,7 @@ import android.hardware.SensorManager;
 public class LabyrintheEngine {
     private Boule mBoule = null;
     private GrapheMat graphe =null ;
-    private int numberOfVectices = 15;
+    private int numberOfVectices = 16;
     public Boule getBoule() {
         return mBoule;
     }
@@ -114,16 +114,21 @@ public class LabyrintheEngine {
 	public List<Bloc> buildLabyrinthe() {
         mBlocks = new ArrayList<Bloc>();
         do{
-         graphe = new GrapheMat(numberOfVectices, 2);
+         graphe = new GrapheMat(numberOfVectices, numberOfVectices-2);
         }while (!GrapheMat.existeChemin(0, numberOfVectices-1, graphe));
-        for (int i = 0; i < graphe.nb ; ++i) {
-            for (int j = 0; j < graphe.nb; ++j){
-            	if(i==j)
+        GrapheMat.fermetureTransitive(graphe); 
+
+        for (int i = 0; i < graphe.nb ; i++) {
+            for (int j = 0; j < graphe.nb; j++){
+            	if(i==j){
                     mBlocks.add(new Bloc(Type.CHEMIN, i, j));
+                    mBlocks.add(new Bloc(Type.CHEMIN, i, j+1));
+            	}
+            	if(graphe.m[i][j]==1){
+            		mBlocks.add(new Bloc(Type.CHEMIN, i, j));
+            		mBlocks.add(new Bloc(Type.CHEMIN, i, j+1));
 
-            	if(graphe.m[i][j]==1)
-                mBlocks.add(new Bloc(Type.CHEMIN, i, j));
-
+            	}
             	
             }
         }
