@@ -2,12 +2,12 @@ package donnee;
 
 // \esc{les graphes  repre'sente's par une matrice  
 
-class GrapheMat {
+public class GrapheMat {
 
-  int m[][];
-  int nb;
+  public int m[][];
+  public int nb;
 
-  static void imprimer (GrapheMat g) { 
+  public static void imprimer (GrapheMat g) { 
 
       System.out.println ("nombre de sommets " + g.nb);
       for (int i = 0; i < g.nb ; ++i) {
@@ -38,7 +38,7 @@ class GrapheMat {
               m[i][h.succ[i][k]] = 1; 
   }
 
-  GrapheMat (int n1, int p) { 
+  public GrapheMat (int n1, int p) { 
   // \esc{Initialisation d'un graphe de n1 sommets sous forme de matrice}
   // \esc{On tire au sort des nombres} 
   // \esc{entre 0 et 1 pour savoir s'il y a un arc entre i et j:  proba 1/p d'exister}
@@ -74,7 +74,7 @@ class GrapheMat {
               c[i][j] = a[i][j] * b[i][j];
   }
       
-  static boolean existeChemin (int i, int j, GrapheMat g) {
+  public static boolean existeChemin (int i, int j, GrapheMat g) {
 
       int n = g.nb;
       int m[][] = g.m;

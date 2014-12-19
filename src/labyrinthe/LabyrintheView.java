@@ -65,9 +65,7 @@ public class LabyrintheView extends SurfaceView implements SurfaceHolder.Callbac
 				case ARRIVEE:
 					mPaint.setColor(Color.GRAY);
 					break;
-				case TROU:
-					mPaint.setColor(Color.CYAN);
-					break;
+				
 				case CHEMIN:
 					mPaint.setColor(Color.rgb(70, 29, 00));
 
@@ -100,6 +98,7 @@ public class LabyrintheView extends SurfaceView implements SurfaceHolder.Callbac
 			this.mBoule.setHeight(getHeight());
 			this.mBoule.setWidth(getWidth());
 		}
+		
 	}
 
 	@Override
