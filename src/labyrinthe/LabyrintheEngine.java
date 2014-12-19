@@ -123,10 +123,14 @@ public class LabyrintheEngine {
             	if(i==j){
                     mBlocks.add(new Bloc(Type.CHEMIN, i, j));
                     mBlocks.add(new Bloc(Type.CHEMIN, i, j+1));
+            		mBlocks.add(new Bloc(Type.CHEMIN, i+1, j));
+
             	}
             	if(graphe.m[i][j]==1){
             		mBlocks.add(new Bloc(Type.CHEMIN, i, j));
-            		mBlocks.add(new Bloc(Type.CHEMIN, i, j+1));
+            		mBlocks.add(new Bloc(Type.CHEMIN, i+1, j));
+                    mBlocks.add(new Bloc(Type.CHEMIN, i, j+1));
+
 
             	}
             	
