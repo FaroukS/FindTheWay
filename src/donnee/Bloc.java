@@ -9,6 +9,8 @@ public class Bloc {
 	
 	public Type mType = null;
 	private RectF mRectangle = null;
+	private int pX = 0 ;
+	private int pY=0;
 	
 	public Type getType() {
 		return mType;
@@ -25,6 +27,19 @@ public class Bloc {
  */
 	public Bloc(Type pType, int pX, int pY) {
 		this.mType = pType;
+		this.pX=pX;
+		this.pY=pY;
 		this.mRectangle = new RectF(pX * SIZE, pY * SIZE, (pX + 1) * SIZE, (pY + 1) * SIZE);
 	}
+
+public int getpX() {
+	return pX;
+}
+
+
+public int getpY() {
+	return pY;
+}
+
+
 }

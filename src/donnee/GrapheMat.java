@@ -39,6 +39,7 @@ public class GrapheMat {
           int a  = (int) (Math.random() * p);
           if (a == p - 1 ) m[i][j] = 1;
             else m[i][j] = 0;
+          m[j][i] =m[i][j] ;
         }
   }
 
