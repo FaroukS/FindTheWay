@@ -17,7 +17,6 @@ import java.util.List;
 
 
 
-import com.mxgraph.view.mxGraph;
 
 import donnee.Bloc.Type;
 import donnee.Bloc;
