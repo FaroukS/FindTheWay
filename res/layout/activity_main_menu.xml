@@ -71,23 +71,7 @@
            />
 
   </TableRow>
-   <TableRow>
-      
-       <Button
-           android:id="@+id/levelf"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:gravity="center"          
-           android:layout_column="0"
-           
-   		   android:layout_span="2"
-   
-           android:layout_marginBottom="20dp"
-           android:text="@string/level_f"
-           android:textColor="#114556" 
-            />
-
-  </TableRow>
+ 
        
   <TableRow>
   

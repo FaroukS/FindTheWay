@@ -29,8 +29,7 @@ public class MainMenu extends Activity {
 		        // Le second est le nom de l'activit� de destination
 		        Intent secondeActivite = new Intent(MainMenu.this, labyrinthe.LabyrintheActivity.class);
 		        
-		        // On rajoute un extra
-		        //secondeActivite.putExtra(DONNEE, valeurNombre);
+		    
 
 		        // Puis on lance l'intent !
 		        startActivity(secondeActivite);
