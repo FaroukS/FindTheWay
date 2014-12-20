@@ -56,9 +56,9 @@ public class LabyrintheActivity extends Activity {
 		switch(id) {
 		case VICTORY_DIALOG:
 			builder.setCancelable(false)
-			.setMessage("You win !")
-			.setTitle("Congradulation !")
-			.setNeutralButton("Restart", new DialogInterface.OnClickListener() {
+			.setMessage("Bravo, vous avez gagn� !")
+			.setTitle("Champion ! Le roi des Z�rglubienotchs est mort gr�ce � vous !")
+			.setNeutralButton("Recommencer", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					// L'utilisateur peut recommencer s'il le veut
@@ -70,9 +70,9 @@ public class LabyrintheActivity extends Activity {
 
 		case DEFEAT_DIALOG:
 			builder.setCancelable(false)
-			.setMessage("Game over")
-			.setTitle("Game over")
-			.setNeutralButton("Restart", new DialogInterface.OnClickListener() {
+			.setMessage("La Terre a �t� d�truite � cause de vos erreurs.")
+			.setTitle("Bah bravo !")
+			.setNeutralButton("Recommencer", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					mEngine.reset();
