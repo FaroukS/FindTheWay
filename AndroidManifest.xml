@@ -16,9 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-<<<<<<< HEAD
-            android:name=".MainMenu"
-=======
+
             android:name="com.example.findtheway.MainMenu"
             android:label="@string/app_name"
              >
@@ -30,8 +28,7 @@
         </activity>
         <activity
             android:name="labyrinthe.LabyrintheActivity"
->>>>>>> graphe
-            android:label="@string/app_name" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
