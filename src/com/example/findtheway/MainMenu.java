@@ -12,7 +12,21 @@ public class MainMenu extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+<<<<<<< HEAD
     }
+=======
+	    mPasserelle = (Button) findViewById(R.id.levelg);
+
+    
+    mPasserelle.setOnClickListener(new View.OnClickListener() {
+	      @Override
+	      public void onClick(View v) {
+	    	  // Le premier param�tre est le nom de l'activit� actuelle
+		        // Le second est le nom de l'activit� de destination
+		        Intent secondeActivite = new Intent(MainMenu.this, labyrinthe.LabyrintheActivity.class);
+		        
+		    
+>>>>>>> graphe
 
 
     @Override
