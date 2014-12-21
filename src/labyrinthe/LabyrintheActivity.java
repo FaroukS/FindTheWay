@@ -2,6 +2,11 @@ package labyrinthe;
 
 import java.util.List;
 
+
+
+
+import com.example.findtheway.R;
+
 import donnee.Bloc;
 import donnee.Boule;
 import android.app.Activity;
@@ -9,17 +14,22 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class LabyrintheActivity extends Activity {
 	// Identifiant de la bo�te de dialogue de victoire
 	public static final int VICTORY_DIALOG = 0;
 	// Identifiant de la bo�te de dialogue de d�faite
 	public static final int DEFEAT_DIALOG = 1;
+	private int life = 7;
 
 	// Le moteur graphique du jeu
 	private LabyrintheView mView = null;
 	// Le moteur physique du jeu
 	private LabyrintheEngine mEngine = null;
+	/* the number of life */
+    private TextView texte;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,8 +66,8 @@ public class LabyrintheActivity extends Activity {
 		switch(id) {
 		case VICTORY_DIALOG:
 			builder.setCancelable(false)
-			.setMessage("You win !")
-			.setTitle("Congradulation !")
+			.setMessage("Congratulation !")
+			.setTitle("you find the way!")
 			.setNeutralButton("Restart", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -69,6 +79,11 @@ public class LabyrintheActivity extends Activity {
 			break;
 
 		case DEFEAT_DIALOG:
+			if(life>0){
+				texte = (TextView) findViewById(R.id.textView1);
+				life--;
+				texte.setText( "X "+ life);
+			}
 			builder.setCancelable(false)
 			.setMessage("Game over")
 			.setTitle("Game over")

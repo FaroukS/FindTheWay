@@ -130,6 +130,8 @@ public class LabyrintheEngine {
     	vertices.put(9, new Bloc(Type.CHEMIN, 9, 7));
 
     	vertices.put(10, new Bloc(Type.ARRIVEE, 15, 19));
+    	vertices.put(11, new Bloc(Type.CHEMIN, 15, 0));
+    	vertices.put(12, new Bloc(Type.CHEMIN, 1, 18));
 
         mBlocks = new ArrayList<Bloc>();
         Bloc b = new Bloc(Type.DEPART, 0, 0);
@@ -142,7 +144,6 @@ public class LabyrintheEngine {
         do{
          graphe = new GrapheMat(numberOfVectices, 2);
         }while (!GrapheMat.existeChemin(0, numberOfVectices-1, graphe));
-        GrapheMat.fermetureTransitive(graphe);
         for (int i = 0; i < graphe.nb ; i++) {
             for (int j = 0; j < graphe.nb; j++){
             	

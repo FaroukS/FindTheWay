@@ -1,0 +1,45 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} 
+\usepackage{color}
+\usepackage{anysize}
+\usepackage{lmodern} % Pour changer le pack de police
+\usepackage{makeidx}
+\date{} % Pour mettre la date du jour, tapez \today 
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{titlesec}
+
+\usepackage{wrapfig}
+\usepackage[linesnumbered]{algorithm2e} %pr le pseudo code
+ \usepackage{amsmath}
+ \usepackage{amsfonts}
+\usepackage{algorithmicx}
+\usepackage{array}
+\definecolor{bleu}{rgb}{.164, 0.094, .3716}
+\definecolor{violet}{rgb}{ .522, .498,  .749}
+
+\titleformat*{\section}{\color{bleu}}
+\titleformat*{\subsubsection}{\color{violet}}
+
+\begin{document}
+
+\fontfamily{phv}\selectfont
+\input{titre.tex}
+\tableofcontents
+\newpage
+\input{introduction.tex}
+ \input{description.tex}
+\input{Activities.tex}
+
+\input{Intents.tex}
+\input{BackgroundServices.tex}
+\input{Sensors.tex}
+\input{conclusion.tex}
+
+\bibliographystyle{plain}
+\bibliography{bibliographies}
+\nocite{*}
+\end{document}
