@@ -70,7 +70,12 @@ public class LabyrintheView extends SurfaceView implements SurfaceHolder.Callbac
 					mPaint.setColor(Color.rgb(70, 29, 00));
 
 					break;
+				case TROU:
+					mPaint.setColor(Color.BLACK);
+					break;
+
 				default:
+					
 					break;
 				}
 				pCanvas.drawRect(b.getRectangle(), mPaint);

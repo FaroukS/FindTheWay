@@ -3,7 +3,7 @@ package donnee;
 import android.graphics.RectF;
 
 public class Bloc {
-	public enum  Type { CHEMIN, DEPART, ARRIVEE };
+	public enum  Type { CHEMIN, DEPART, ARRIVEE, TROU };
 	
 	private float SIZE = Boule.RAYON * 2;
 	

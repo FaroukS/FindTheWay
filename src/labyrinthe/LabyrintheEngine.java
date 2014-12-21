@@ -10,9 +10,9 @@ import java.util.List;
 
 
 
+import com.example.findtheway.R;
 
-
-
+import android.widget.TextView;
 
 
 
@@ -22,6 +22,7 @@ import donnee.Bloc.Type;
 import donnee.Bloc;
 import donnee.Boule;
 import donnee.GrapheMat;
+import android.app.Activity;
 import android.app.Service;
 import android.graphics.RectF;
 import android.hardware.Sensor;
@@ -29,11 +30,15 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
-public class LabyrintheEngine {
+public class LabyrintheEngine extends Activity{
     private Boule mBoule = null;
     private GrapheMat graphe =null ;
     private HashMap<Integer, Bloc> vertices = new HashMap<Integer, Bloc>();
     private int numberOfVectices = 0;
+    /* the number of life */
+    private TextView texte;
+	private int life = 7;
+
     public Boule getBoule() {
         return mBoule;
     }
@@ -52,9 +57,8 @@ public class LabyrintheEngine {
 
     SensorEventListener mSensorEventListener = new SensorEventListener() {
 
-        @SuppressWarnings("deprecation")
 		@Override
-        public void onSensorChanged(SensorEvent pEvent) {
+		public void onSensorChanged(SensorEvent pEvent) {
             float x = pEvent.values[0];
             float y = pEvent.values[1];
 
@@ -69,7 +73,8 @@ public class LabyrintheEngine {
                     if(inter.intersect(hitBox)) {
                         // On agit différement en fonction du type de bloc
                         switch(block.getType()) {
-                        case CHEMIN:
+                        case CHEMIN :
+
                             break;
 
                         case DEPART:
@@ -78,10 +83,17 @@ public class LabyrintheEngine {
                         case ARRIVEE:
                             mActivity.showDialog(LabyrintheActivity.VICTORY_DIALOG);
                             break;
-						default:
+                        case TROU :
                             mActivity.showDialog(LabyrintheActivity.DEFEAT_DIALOG);
+                            if(life>0){
+                   				texte = (TextView) findViewById(R.id.nbVie);
+                   				life--;
+                   				texte.setText( "X "+ life);
+                   			}
+                            break;
+                           default :
+                             
 
-							break;
                         }
                         break;
                     }
@@ -101,7 +113,9 @@ public class LabyrintheEngine {
         mAccelerometre = mManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
 
-    // Remet à zéro l'emplacement de la boule
+   
+
+	// Remet à zéro l'emplacement de la boule
     public void reset() {
         mBoule.reset();
     }
@@ -117,7 +131,6 @@ public class LabyrintheEngine {
     }
 
     // Construit le labyrinthe
-    @SuppressWarnings("unused")
 	public List<Bloc> buildLabyrinthe() {
     	vertices.put(1, new Bloc(Type.CHEMIN, 10, 4));
     	vertices.put(2, new Bloc(Type.CHEMIN, 0, 10));
@@ -134,10 +147,18 @@ public class LabyrintheEngine {
     	vertices.put(12, new Bloc(Type.CHEMIN, 1, 18));
 
         mBlocks = new ArrayList<Bloc>();
+        
+		mBlocks.add(new Bloc(Type.TROU, 3, 2));
+		mBlocks.add(new Bloc(Type.TROU, 2, 1));
+		mBlocks.add(new Bloc(Type.TROU, 2, 4));
+		mBlocks.add(new Bloc(Type.TROU, 3, 5));
+		mBlocks.add(new Bloc(Type.TROU, 13, 15));
+
         Bloc b = new Bloc(Type.DEPART, 0, 0);
     	vertices.put(0,b);
     	numberOfVectices = vertices.size();
         mBoule.setInitialRectangle(new RectF(b.getRectangle()));
+        
         for(Bloc bloc : vertices.values()){
         	mBlocks.add(bloc);
         }
@@ -172,6 +193,9 @@ public class LabyrintheEngine {
         		}
 
             	}
+        		
+            		
+            	
             	
             }
         }
