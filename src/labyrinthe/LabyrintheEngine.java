@@ -10,19 +10,14 @@ import java.util.List;
 
 
 
-import com.example.findtheway.R;
-
-import android.widget.TextView;
 
 
-
-
+import com.example.findtheway.MainMenu;
 
 import donnee.Bloc.Type;
 import donnee.Bloc;
 import donnee.Boule;
 import donnee.GrapheMat;
-import android.app.Activity;
 import android.app.Service;
 import android.graphics.RectF;
 import android.hardware.Sensor;
@@ -30,14 +25,12 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
-public class LabyrintheEngine extends Activity{
+public class LabyrintheEngine {
     private Boule mBoule = null;
     private GrapheMat graphe =null ;
     private HashMap<Integer, Bloc> vertices = new HashMap<Integer, Bloc>();
     private int numberOfVectices = 0;
-    /* the number of life */
-    private TextView texte;
-	private int life = 7;
+
 
     public Boule getBoule() {
         return mBoule;
@@ -57,6 +50,7 @@ public class LabyrintheEngine extends Activity{
 
     SensorEventListener mSensorEventListener = new SensorEventListener() {
 
+		@SuppressWarnings("deprecation")
 		@Override
 		public void onSensorChanged(SensorEvent pEvent) {
             float x = pEvent.values[0];
@@ -85,11 +79,6 @@ public class LabyrintheEngine extends Activity{
                             break;
                         case TROU :
                             mActivity.showDialog(LabyrintheActivity.DEFEAT_DIALOG);
-                            if(life>0){
-                   				texte = (TextView) findViewById(R.id.nbVie);
-                   				life--;
-                   				texte.setText( "X "+ life);
-                   			}
                             break;
                            default :
                              

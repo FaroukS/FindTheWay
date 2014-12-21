@@ -7,7 +7,8 @@ import java.util.List;
 
 
 
-import com.example.findtheway.R;
+
+
 
 import donnee.Bloc;
 import donnee.Boule;
@@ -15,11 +16,15 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 public class LabyrintheActivity extends Activity {
-	
+    /* the number of life */
+    private TextView texte;
+	  public final static String DONNEE = "DONNEE";
+
 	// Identifiant de la bo�te de dialogue de victoire
 	public static final int VICTORY_DIALOG = 0;
 	// Identifiant de la bo�te de dialogue de d�faite
@@ -29,7 +34,6 @@ public class LabyrintheActivity extends Activity {
 	private LabyrintheView mView = null;
 	// Le moteur physique du jeu
 	private LabyrintheEngine mEngine = null;
-	/* the number of life */
 
 
 	@Override
@@ -48,7 +52,9 @@ public class LabyrintheActivity extends Activity {
 		List<Bloc> mList = mEngine.buildLabyrinthe();
 		mView.setBlocks(mList);
 	}
+	
 
+	
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -68,13 +74,14 @@ public class LabyrintheActivity extends Activity {
 			builder.setCancelable(false)
 			.setMessage("Congratulation !")
 			.setTitle("you find the way!")
-			.setNeutralButton("Restart", new DialogInterface.OnClickListener() {
+			.setNeutralButton("Go to the menu", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					// L'utilisateur peut recommencer s'il le veut
-					mEngine.reset();
-					mEngine.resume();
-				}
+					Intent result = new Intent();
+			        result.putExtra(DONNEE, 0);
+		        setResult(RESULT_OK, result);
+			        finish();
+			        }
 			});
 			break;
 
@@ -82,17 +89,20 @@ public class LabyrintheActivity extends Activity {
 			builder.setCancelable(false)
 			.setMessage("Game over")
 			.setTitle("Game over")
-			.setNeutralButton("Restart", new DialogInterface.OnClickListener() {
+			.setNeutralButton("Go to the menu", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					mEngine.reset();
-					mEngine.resume();
-					
+					Intent result = new Intent();
+			        result.putExtra(DONNEE, 1);
+			        setResult(RESULT_OK, result);
+			        finish();
+			        				
 				}
 			});
 		}
 		return builder.create();
 	}
+
 	
 	@Override
 	public void onPrepareDialog (int id, Dialog box) {

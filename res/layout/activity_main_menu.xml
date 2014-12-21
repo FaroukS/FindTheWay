@@ -40,7 +40,9 @@
           
           android:layout_column="0"
           android:src="@drawable/coeur" />
-
+      <TableLayout>
+       <TableRow>
+          
       <TextView
           android:id="@+id/nbVie"
           android:layout_width="wrap_content"
@@ -52,6 +54,25 @@
           
           android:textSize="30sp"
           android:text="@string/life" />
+
+     </TableRow>
+
+   <TableRow>
+          <TextView
+          android:id="@+id/time"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_column="1"
+          android:layout_marginTop="20dp"
+          android:layout_marginBottom="15dp"          
+          android:layout_marginLeft="15dp"
+          
+          android:textSize="30sp"
+          android:text="@string/time" />
+               </TableRow>
+          
+      </TableLayout>
+          
   </TableRow>
 
    <TableRow>
@@ -72,18 +93,6 @@
 
   </TableRow>
  
-       
-  <TableRow>
   
-       <Button
-           android:id="@+id/button3"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="@string/exit"            
-           android:textColor="#114556" 
-           android:layout_column="1"
-           
-           />
-  </TableRow>
 
 </TableLayout>
