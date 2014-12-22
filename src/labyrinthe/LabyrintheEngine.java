@@ -53,6 +53,7 @@ public class LabyrintheEngine {
 		@SuppressWarnings("deprecation")
 		@Override
 		public void onSensorChanged(SensorEvent pEvent) {
+			
             float x = pEvent.values[0];
             float y = pEvent.values[1];
 
@@ -116,7 +117,7 @@ public class LabyrintheEngine {
 
     // Redémarre le capteur
     public void resume() {
-        mManager.registerListener(mSensorEventListener, mAccelerometre, SensorManager.SENSOR_DELAY_GAME);
+        mManager.registerListener(mSensorEventListener, mAccelerometre, SensorManager.SENSOR_DELAY_UI);
     }
 
     // Construit le labyrinthe

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.5)  21 DEC 2014 12:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.5)  22 DEC 2014 17:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -465,24 +465,23 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )) (./Intents.tex) (./BackgroundServices.tex) (./Sensors.tex) (./conclusion.tex
 )
-No file FindTheWay.bbl.
-[2] (./FindTheWay.aux) ) 
+(./FindTheWay.bbl) [2] (./FindTheWay.aux) ) 
 Here is how much of TeX's memory you used:
- 5328 strings out of 493315
- 74552 string characters out of 6137905
- 171456 words of memory out of 5000000
+ 5330 strings out of 493315
+ 74570 string characters out of 6137905
+ 173460 words of memory out of 5000000
  8622 multiletter control sequences out of 15000+600000
- 35821 words of font info for 44 fonts, out of 8000000 for 9000
+ 34085 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,5n,26p,448b,162s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/
-lm-mathsy.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/urw/helvetic/uhvr8a.pfb>
-Output written on FindTheWay.pdf (3 pages, 142035 bytes).
+ 42i,5n,26p,402b,161s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-dist/
+fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/
+dvips/lm/lm-ec.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.
+enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on FindTheWay.pdf (3 pages, 144753 bytes).
 PDF statistics:
  34 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream

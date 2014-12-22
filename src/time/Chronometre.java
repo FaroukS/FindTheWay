@@ -16,6 +16,8 @@ public class Chronometre {
 	public void increment() {
 		seconds.increment();
 		if (seconds.getValue() == ChronometreParameter.MAX_SECONDS) {
+			seconds.increment();
+
 			minutes.increment();
 		} 
 	}

@@ -34,7 +34,9 @@ public class Timer {
 	public int getValue() {
 		return value;
 	}
-
+	public void setValue(int value) {
+		this.value = value;
+	}
 	public Boolean isEmpty() {
 		if (value == min) {
 			return true;
